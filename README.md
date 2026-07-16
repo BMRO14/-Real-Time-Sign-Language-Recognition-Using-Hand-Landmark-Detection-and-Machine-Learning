@@ -1,52 +1,51 @@
 # Real-Time Sign Language Recognition
 
-A simple real-time sign language recognition project that detects hand landmarks from a webcam and classifies static hand gestures for the 26 letters of the English alphabet. It uses MediaPipe Hands for landmark detection and a Random Forest model for classification [file:1].
+A simple project that recognizes static hand signs for the 26 letters of the English alphabet using a webcam, hand landmarks, and machine learning.
 
 ## Overview
 
-This project was built as a practical accessibility tool for recognizing static finger-spelling signs.  
-Instead of using raw images, it extracts 21 hand landmarks and converts them into a 42-value feature vector for machine learning [file:1].
+This project uses MediaPipe Hands to detect hand landmarks from live video.  
+The landmark coordinates are then normalized and used to train a Random Forest classifier.  
+The system can recognize letters A–Z in real time and display the prediction on the video stream.
 
 ## Features
 
-- Real-time webcam-based recognition [file:1].
-- Recognition of the 26 letters A–Z [file:1].
-- Hand landmark extraction with MediaPipe Hands [file:1].
-- Random Forest classifier for fast prediction [file:1].
-- Trained on a custom dataset collected with a camera [file:1].
-
-## Project Structure
-
-- `collect_imgs.py` – collects labeled images from the webcam [file:1].
-- `create_dataset.py` – extracts hand landmarks and creates the dataset [file:1].
-- `train_classifier.py` – trains the Random Forest model [file:1].
-- `interference_classifier.py` – runs real-time recognition [file:1].
+- Real-time webcam-based recognition.
+- Recognition of the 26 alphabet letters.
+- Hand landmark detection with MediaPipe Hands.
+- Machine learning classification with Random Forest.
+- Custom dataset collected from labeled gesture images.
 
 ## How It Works
 
-1. Capture hand gesture images for each letter.
-2. Detect 21 hand landmarks using MediaPipe Hands.
+1. Capture images of hand gestures for each letter.
+2. Detect 21 hand landmarks from each image.
 3. Normalize the landmark coordinates.
-4. Train a Random Forest classifier.
-5. Use the trained model to predict the letter in real time [file:1].
+4. Train a Random Forest model.
+5. Use the trained model for live prediction from the webcam.
+
+## Project Files
+
+- `collect_imgs.py` – collects gesture images from the webcam.
+- `create_dataset.py` – extracts hand landmarks and builds the dataset.
+- `train_classifier.py` – trains the classifier and saves the model.
+- `interference_classifier.py` – runs real-time recognition.
 
 ## Dataset
 
-- 26 classes.
+- 26 classes: A to Z.
 - 200 images per class.
-- 5,200 images in total [file:1].
+- 5200 total images.
 
 ## Alphabet Reference
 
-Add the alphabet image here:
+Add the alphabet photo here:
 
-```md
 ![Alphabet gestures](images/alphabet.png)
-```
 
 ## Results
 
-The project reached about 99.9% accuracy on the test set, showing that landmark-based features can work very well for static sign recognition [file:1].
+The project achieved about 99.9% accuracy on the test set.
 
 ## Requirements
 
@@ -55,11 +54,6 @@ The project reached about 99.9% accuracy on the test set, showing that landmark-
 - MediaPipe
 - NumPy
 - scikit-learn
-
-## Notes
-
-- The system uses only one detected hand at a time to avoid confusion [file:1].
-- The project is designed for static gestures, not full continuous sign language [file:1].
 
 ## Author
 
