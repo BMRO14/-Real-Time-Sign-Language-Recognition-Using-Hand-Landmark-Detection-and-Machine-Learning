@@ -41,7 +41,7 @@ Instead of using raw images, it extracts 21 hand landmarks and converts them int
 Add the alphabet image here:
 
 ```md
-![Alphabet gestures](alphabet.png)
+![Alphabet gestures](images/alphabet.png)
 ```
 
 ## Results
