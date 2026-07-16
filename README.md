@@ -39,8 +39,6 @@ The system can recognize letters A–Z in real time and display the prediction o
 
 ## Alphabet Reference
 
-Add the alphabet photo here:
-
 ![Alphabet gestures](images/alphabet.png)
 
 ## Results
